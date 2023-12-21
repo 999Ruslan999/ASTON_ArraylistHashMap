@@ -1,4 +1,4 @@
-package Arraylist;
+package arraylist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // Реализация Arraylist.
+        // Реализация Arraylist. (Заметки)
         // Создал несколько элементов в коллекцию экземпляра класса Affairs
         // Создал 2 метода, для добавления новой заметки и для удаления любой заметки по её индексу
         // Реализовал с использованием обоих методов, так же есть метод для вывода коллекции с её индексами.

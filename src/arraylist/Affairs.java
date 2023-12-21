@@ -1,4 +1,4 @@
-package Arraylist;
+package arraylist;
 
 
 // Класс нужен просто как сущность, у заметок есть только название (name)
