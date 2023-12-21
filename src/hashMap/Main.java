@@ -13,7 +13,7 @@ public class Main {
         // Нам нужно ввести в консоль Страну, Город и вес доставки.
         // После каждого ввода заказа, нам программа выводит стоимость доставки одного заказа.
         // Для выхода из программы нам нужно ввести в место страны слово "выход".
-        // После выхода программа выведет итоговую сумму всех доставок.
+        // После выхода программа выведет общую стоимость всех доставок.
 
         Scanner scanner = new Scanner(System.in);
 
@@ -33,12 +33,12 @@ public class Main {
         int totalCost = 0;
         while (true) {
             System.out.println("Создание нового заказа: / для выхода введите - выход");
-            System.out.println("Введите страну");
+            System.out.println("Введите страну:");
             String country = scanner.nextLine();
             if (country.equals("выход")) break;
-            System.out.println("Введите город");
+            System.out.println("Введите город:");
             String city = scanner.nextLine();
-            System.out.println("Введите вес заказа");
+            System.out.println("Введите вес заказа (кг): ");
             Integer weight = scanner.nextInt();
             scanner.nextLine();
             Address address = new Address(country, city);
@@ -53,7 +53,7 @@ public class Main {
             }
 
         }
-        System.out.println("Стимость доставки всех ваших заказов: " + totalCost + "р.");
+        System.out.println("Общая стоимость всех доставок: " + totalCost + "р.");
 
     }
 }
