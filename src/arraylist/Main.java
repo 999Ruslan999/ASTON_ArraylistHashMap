@@ -1,16 +1,20 @@
 package arraylist;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
         // Реализация Arraylist. (Заметки)
         // Создал несколько элементов в коллекцию экземпляра класса Affairs
-        // Создал 2 метода, для добавления новой заметки и для удаления любой заметки по её индексу
-        // Реализовал с использованием обоих методов, так же есть метод для вывода коллекции с её индексами.
+        // Создал 5 методов:
+        // 1) Добавление новой заметки.
+        // 2) Удаление заметки по её индексу.
+        // 3) Редактирование элемента по индексу.
+        // 4) Вывод элемента по индексу.
+        // 5) Вывод элементов с их индексами.
+        // Реализовал с использованием всех методов.
+        // Для удобства выполнения программы использовал Scanner.
 
         Affairs affairs1 = new Affairs("Купить молоко");
         Affairs affairs2 = new Affairs("Зайти на почту");
@@ -26,6 +30,8 @@ public class Main {
 
         addAffairs(list);
         deleteAffairs(list);
+        updateAffairs(list);
+        printAffairByIndex(list);
 
     }
 
@@ -49,15 +55,58 @@ public class Main {
         scanner = new Scanner(System.in);
         System.out.println("Введите номер заметки, которую хотите удалить");
         int index = scanner.nextInt();
+        scanner.nextLine();
         if (index < 0 || index > list.size()) {
             System.out.println("Такой заметки нет");
         } else {
             list.remove(index);
             System.out.println("Заметка успешно удалена");
+
+            demonstrationList(list);
         }
-        demonstrationList(list);
         return list;
     }
+
+
+    // Метод для редактирования заметок
+    public static List<Affairs> updateAffairs(List<Affairs> list) {
+
+        scanner = new Scanner(System.in);
+        System.out.println("Введите номер заметки, которую хотите редактировать");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+        if (index < 0 || index > list.size()) {
+            System.out.println("Такой заметки нет");
+        } else {
+            System.out.println("Редактируйте заметку");
+            String name = scanner.nextLine();
+            Affairs updateAffairs = new Affairs(name);
+            list.set(index, updateAffairs);
+            System.out.println("Заметка успешно отредактирована");
+
+
+            demonstrationList(list);
+        }
+        return list;
+
+    }
+
+
+    // Метод вывода элемента по индексу
+    public static void printAffairByIndex(List<Affairs> list) {
+
+        System.out.println("Введите номер заметки");
+        int index = scanner.nextInt();
+        if (index < 0 || index > list.size()) {
+            System.out.println("Такой заметки нет");
+        } else {
+            Affairs affairs = list.get(index);
+            System.out.println(affairs);
+        }
+
+
+    }
+
 
     // Метод для вывода коллекции с индексами элементов
     public static void demonstrationList(List<Affairs> list) {
